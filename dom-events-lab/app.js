@@ -57,11 +57,11 @@ const receiveInput = (value) => {
         firstNumReceived = true;
     } else if (!operatorReceived) {
         operator = value;
-        console.log(`X: ${operator}`)
+        console.log(`Op: ${operator}`)
         operatorReceived = true;
     } else if (!secondNumReceived) {
         y = Number(value);
-        console.log(`X: ${y}`)
+        console.log(`Y: ${y}`)
         secondNumReceived = true;
     }
 }

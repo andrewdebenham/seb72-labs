@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const server = express();
 
@@ -74,5 +75,6 @@ server.get('/menu/:category', (req, res) => {
 
 server.listen(3000, () => {
     console.log('The server is listening at https://localhost:3000/');
+    console.log(`Your secret is ${process.env.SECRET_PASSWORD}`)
 });
 

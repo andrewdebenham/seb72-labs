@@ -1,0 +1,7 @@
+GET         /items/new           new
+POST        /items               create
+GET         /items               index
+GET         /items/:id           show
+GET         /items/:id/edit      edit
+PUT         /items/:id           update
+DELETE      /items/:id           delete

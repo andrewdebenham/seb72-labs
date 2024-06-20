@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Item</title>
+</head>
+<body>
+    <a href="/items">Back to shopping list</a>
+    <h1>Edit Item</h1>
+    <form action="/items/<%= item._id %>?_method=PUT" method="post">
+        <label>
+            Name:
+            <input name="name" value="<%= item.name %>">
+        </label>
+        <label>
+            Price:
+            <input type="number" name="price" step="0.05" value="<%= item.price %>">
+        </label>
+        <label>
+            Quantity:
+            <input type="number" name="quantity" min="0" max="100" value="<%= item.quantity %>">
+            <button type="submit">Update Item</button>
+        </label>
+    </form>
+</body>
+</html>

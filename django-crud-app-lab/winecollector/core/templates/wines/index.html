@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}" />
+{% endblock %}
+{% block content %}
+
+<section class="page-header">
+    <h1>Wine List</h1>
+    <!-- <img src="{% static 'images/cool-cat.svg' %}" alt="A cool cat" />
+    <img src="{% static 'images/happy-cat.svg' %}" alt="A happy cat" />
+    <img src="{% static 'images/teacup-cat.svg' %}" alt="A cat in a teacup" />
+    <img src="{% static 'images/cat-in-box.svg' %}" alt="A cat in a box" /> -->
+</section>
+
+<section class="card-container">
+    {% for wine in wines %}
+    <div class="card">
+        <a href="{% url 'wine-detail' wine.id %}">
+            <div class="card-content">
+                <div class="card-img-container">
+                    <img
+                        src="{% static 'images/wine-bottle-svgrepo-com.svg' %}"
+                        alt="The Wine Collector Logo"
+                    />
+                </div>
+                <h2 class="card-title">{{ wine.producer }} {{ wine.variety }} {{ wine.year }}</h2>
+                <p>A {{ wine.style }} wine from {{ wine.region }}, {{wine.country}}</p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}

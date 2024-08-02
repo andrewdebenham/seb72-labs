@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}" />
+{% endblock %}
+{% block content %}
+<section class="wine-container">
+    <div class="wine-img">
+        <img src="{% static 'images/wine-bottle-svgrepo-com.svg' %}" alt="Wine Collector Logo" />
+    </div>
+    <div class="wine-details">
+        <h1>{{ wine.producer }} {{ wine.variety }} {{ wine.year }}</h1>
+        <p>A {{ wine.style }} wine from {{ wine.region }}, {{wine.country}}</p>
+        <div class="wine-actions">
+            <a href="{% url 'wine-update' wine.id %}" class="btn warn">Edit</a>
+            <a href="{% url 'wine-delete' wine.id %}" class="btn danger">Delete</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
